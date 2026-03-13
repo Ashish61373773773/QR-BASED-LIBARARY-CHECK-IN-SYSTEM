@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QR-Lib | Smart Library System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- QR Scanner -->
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<h1><i class="fas fa-book-reader"></i> QR-Lib</h1>
+<p>Smart Library Check-in System</p>
+</header>
+
+
+<div class="main-grid">
+
+<!-- Scanner Section -->
+
+<div class="card scanner-section">
+
+<h2><i class="fas fa-qrcode"></i> Scanner</h2>
+
+<div id="reader"></div>
+
+<div id="scan-result" class="result-box hidden">
+
+<h3 id="status-msg">Scanning...</h3>
+
+<p id="time-msg"></p>
+
+</div>
+
+</div>
+
+
+<!-- Dashboard Section -->
+
+<div class="card dashboard-section">
+
+<h2><i class="fas fa-chart-line"></i> Live Logs</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+<h3 id="total-visitors">0</h3>
+<span>Total Today</span>
+</div>
+
+<div class="stat-box active">
+<h3 id="current-inside">0</h3>
+<span>Currently Inside</span>
+</div>
+
+</div>
+
+<!-- Table wrapper for mobile -->
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Status</th>
+<th>Time</th>
+</tr>
+
+</thead>
+
+<tbody id="log-table-body">
+<!-- Logs will appear here -->
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- New User Generator -->
+
+<div class="card new-user-section">
+
+<h3><i class="fas fa-id-card"></i> Generate New Library Card</h3>
+
+<div class="form-group">
+
+<input type="text" id="new-name" placeholder="Full Name">
+
+<input type="email" id="new-email" placeholder="Email Address">
+
+<button onclick="generateCard()">
+<i class="fas fa-qrcode"></i> Generate QR Card
+</button>
+
+</div>
+
+<div id="generated-card" class="hidden">
+
+<p>Your QR Code:</p>
+
+<img id="qr-image" src="" alt="QR Code">
+
+<p class="small-text">
+Show this to the librarian to check in.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
